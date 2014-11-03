@@ -56,6 +56,7 @@ WSGI_APPLICATION = 'qanda.wsgi.application'
 
 REST_FRAMEWORK = {
     'PAGINATE_BY': 10,
+    'PAGINATE_BY_PARAM': 'page_size',
     'DEFAULT_FILTER_BACKENDS': (
         'rest_framework.filters.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
