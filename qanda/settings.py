@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'questions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +54,9 @@ ROOT_URLCONF = 'qanda.urls'
 
 WSGI_APPLICATION = 'qanda.wsgi.application'
 
+REST_FRAMEWORK = {
+    'PAGINATE_BY': 10
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -59,7 +64,11 @@ WSGI_APPLICATION = 'qanda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'qanda.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
