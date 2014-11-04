@@ -2,6 +2,9 @@ from rest_framework import serializers
 from questions.models import Question, Answer
 
 class AnswerSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    Serializer for questions.models.Answer
+    """
     question = serializers.Field(source='question.text')
     
     # TODO: need to get the request here somehow to reverse the url, since apparently can't just do this
@@ -17,6 +20,9 @@ class AnswerSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'value', 'is_correct', 'question', 'question_url')
     
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    Serializer for questions.models.Question
+    """
     answers = AnswerSerializer(many=True)
 
     class Meta:

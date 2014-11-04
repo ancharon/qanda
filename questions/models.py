@@ -1,6 +1,10 @@
 from django.db import models
 
 class Question(models.Model):
+    """
+    Model for Question objects, which include some question text
+    and a number of potential Answers as children.
+    """
     ADDITION = 'ADD'
     SUBTRACTION = 'SUB'
     MULTIPLICATION = 'MUL'
@@ -22,6 +26,10 @@ class Question(models.Model):
         ordering = ('created',)
 
 class Answer(models.Model):
+    """
+    Model for Answer objects, which are tied to a parent Question.
+    Answers can be correct or incorrect.
+    """
     created = models.DateTimeField(auto_now_add=True)
     value = models.DecimalField(max_digits=19, decimal_places=10)
     is_correct = models.BooleanField(default=False)
