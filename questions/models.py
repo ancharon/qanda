@@ -5,10 +5,10 @@ class Question(models.Model):
     Model for Question objects, which include some question text
     and a number of potential Answers as children.
     """
-    ADDITION = 'ADD'
-    SUBTRACTION = 'SUB'
-    MULTIPLICATION = 'MUL'
-    DIVISION = 'DIV'
+    ADDITION = 'addition'
+    SUBTRACTION = 'subtraction'
+    MULTIPLICATION = 'multiplication'
+    DIVISION = 'division'
     QUESTION_TYPES = (
         (ADDITION, 'addition'),
         (SUBTRACTION, 'subtraction'),

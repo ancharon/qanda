@@ -25,13 +25,13 @@ if __name__ == "__main__":
             # Pull question text and inferred type from the PSV
             text = row['question']
             if '+' in text:
-                type = 'ADD'
+                type = 'addition'
             elif '-' in text:
-                type = 'SUB'
+                type = 'subtraction'
             elif '*' in text:
-                type = 'MUL'
+                type = 'multiplication'
             elif '/' in text:
-                type = 'DIV'
+                type = 'division'
             else:
                 print("Couldn't determine type of question; skipping...")
                 continue
